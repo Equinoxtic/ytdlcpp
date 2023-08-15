@@ -1,11 +1,6 @@
 # Building from source
 * Install both [FFmpeg](https://www.ffmpeg.org/download.html), [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases/tag/2023.07.06), and [MinGW Compiler](https://sourceforge.net/projects/mingw/)
 * Create a folder for FFmpeg and yt-dlp in your C: directory
-*  Open ``cmd`` or your terminal to install chocolatey (this will be used to install [make](https://www.gnu.org/software/make/) later on):
-```.bat
-> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-```
-* Restart ``cmd`` or the terminal and run ``choco install make``, this will install ``make`` which will be used for compiling
 ---
 ## MinGW Setup
 * With MinGW installed, you now install g++. Go to MinGW Installation Manager then you'll have to install ``mingw32-gcc-g++-bin``
