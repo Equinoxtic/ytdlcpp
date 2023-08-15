@@ -23,7 +23,7 @@ void createMainMenuBanner()
 
 void createMainMenuDescriptions()
 {
-	std::string repositoryLink = "";
+	std::string repositoryLink = "https://github.com/Equinoxtic/ytdlcpp/tree/master";
 	std::vector<std::string> descriptionVector = {
 		"Download videos from YouTube.",
 		"Extract audio from YouTube videos.",
