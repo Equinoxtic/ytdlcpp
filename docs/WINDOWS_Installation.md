@@ -1,6 +1,7 @@
 # Building from source
-* Install both [FFmpeg](https://www.ffmpeg.org/download.html), [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases/tag/2023.07.06), and [MinGW Compiler](https://sourceforge.net/projects/mingw/)
+* Install [FFmpeg](https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n6.0-latest-win64-lgpl-6.0.zip), [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases/download/2023.07.06/yt-dlp_win.zip), and [MinGW Compiler](https://sourceforge.net/projects/mingw/)
 * Create a folder for FFmpeg and yt-dlp in your C: directory
+* Drag all files from FFmpeg to your FFmpeg directory and do the same for yt-dlp
 ---
 ## MinGW Setup
 * With MinGW installed, you now install g++. Go to MinGW Installation Manager then you'll have to install ``mingw32-gcc-g++-bin``
@@ -14,8 +15,8 @@
 * Click on "Apply" then it should start downloading, once done you can safely click on "Close" and close MinGW
 ---
 ## Setting Environment Variables
-* Go to the folder where you installed ``FFmpeg`` and ``yt-dlp``
-* Copy their paths and search up in Windows ``Edit the system environment variables``
+* Go to the folder where you installed ``FFmpeg`` (Go to ``FFmpeg/bin/``) and ``yt-dlp``
+* Copy their paths and search up in Windows: ``Edit the system environment variables``
 * Click on ``Environment Variables``
 * Under ``System Variables`` find ``Path``, click on it and press ``Edit``
-* Press on ``New`` and paste in each of the directories for FFmpeg and yt-dlp
+* Press on ``New`` and paste in each of the directories for ``FFmpeg/bin/`` and ``yt-dlp``
