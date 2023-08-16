@@ -3,3 +3,5 @@
 [Bb]in/*.exe
 [Bb]in/*.out
 [Bb]in/*.o
+[Ll]ocal/
+[Ll]ocal/*.txt
