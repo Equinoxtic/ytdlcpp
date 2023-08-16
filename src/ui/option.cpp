@@ -4,7 +4,7 @@
 #include<cstdio>
 #include<sstream>
 
-void createOption_s(std::string main_s, std::string desc)
+static void createOption_s(std::string main_s, std::string desc)
 {
 	if (!(main_s.empty() && desc.empty())) {
 		printf("%s: %s", encloseString(main_s, "[", "]").c_str(), quoteString(desc).c_str());
@@ -13,7 +13,7 @@ void createOption_s(std::string main_s, std::string desc)
 
 int createOption(std::string arg_s, std::string description)
 {
-	if (arg_s.empty() && description.empty()) {
+	if (stringEmpty(arg_s) == 0 || stringEmpty(description) == 0) {
 		std::cout << "FAILED TO CREATE OPTION";
 		return 1;
 	} else {

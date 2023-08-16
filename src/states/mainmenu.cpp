@@ -1,6 +1,7 @@
 #include "./mainmenu.hpp"
 #include "./audiomode.hpp"
 #include "./videomode.hpp"
+#include "./playmode.hpp"
 #include "../logging.hpp"
 #include "../ui/option.hpp"
 #include "../ui/bar.hpp"
@@ -15,13 +16,13 @@
 #include<string>
 #include<conio.h>
 
-void createMainMenuBanner()
+static void createMainMenuBanner()
 {
 	std::cout << "YTDLCPP - YouTube Downloader in C++\n\n";
 	createBar(80);
 }
 
-void createMainMenuDescriptions()
+static void createMainMenuDescriptions()
 {
 	std::string repositoryLink = "https://github.com/Equinoxtic/ytdlcpp/tree/master";
 	std::vector<std::string> descriptionVector = {
@@ -36,17 +37,19 @@ void createMainMenuDescriptions()
 	std::cout << "\n";
 }
 
-void showMainMenuOptions(bool newline = false, bool listing_mode = false)
+static void showMainMenuOptions(bool newline = false, bool listing_mode = false)
 {
 	std::vector<std::string> option_names = {
 		"dl-audio",
 		"dl-video",
+		"play",
 		"help",
-		"quit"
+		"exit"
 	};
 	std::vector<std::string> options_descs = {
 		"Download Audio",
 		"Download Video",
+		"Play a video or an audio.",
 		"Get help of options",
 		"Exit program"
 	};
@@ -73,7 +76,7 @@ int createMainMenu()
 	createMainMenuDescriptions();
 	showMainMenuOptions();
 
-	while(compareString(coption, "quit") != 0) {
+	while(compareString(coption, "exit") != 0) {
 		std::cout << "[prompt]:~$ ";
 		std::getline(std::cin, icoption);
 		coption = icoption;
@@ -81,6 +84,8 @@ int createMainMenu()
 			runAudioMode();
 		} else if (compareString(coption, "dl-video") == 0) {
 			runVideoMode();
+		} else if (compareString(coption, "play") == 0) {
+			runPlayMode();
 		} else if (compareString(coption, "help") == 0) {
 			showMainMenuOptions(true, true);
 		}

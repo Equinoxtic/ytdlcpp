@@ -1,5 +1,5 @@
 # YTDLCPP - YouTube Downloader in C++
-* A simple lightweight youtube downloader built ontop of FFmpeg and yt-dlp.
+* A simple lightweight youtube downloader built ontop of FFmpeg, FFplay, and yt-dlp.
 ---
 ## References:
 * ([FFmpeg](https://www.ffmpeg.org/)) - FFmpeg is a collection of libraries and tools to process multimedia content

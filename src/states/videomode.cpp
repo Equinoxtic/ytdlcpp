@@ -43,7 +43,7 @@ int runVideoMode()
 
 	std::cout << "[Video Format ([mp4: default], mov)]: ";
 	std::getline(std::cin, videoFormat);
-	if (stringEmpty(videoQuality) == 0) {
+	if (stringEmpty(videoFormat) == 0) {
 		logMessage("\'video format\' string cannot be empty.", "warn");
 		return 1;
 	}

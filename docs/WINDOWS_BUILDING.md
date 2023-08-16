@@ -1,11 +1,12 @@
 # Building from source
-* Install this repository through GitHub's built in ZIP downloader
+* Download this repository through GitHub's built in ZIP downloader
 
 ![downloadlol](https://cdn.discordapp.com/attachments/798150104158568448/1140927243011498044/image.png)
 
-* Once installing, extract the ZIP folder and you can proceed to building the stuff from source
-* Install both [FFmpeg](https://www.ffmpeg.org/download.html), [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases/tag/2023.07.06), and [MinGW Compiler](https://sourceforge.net/projects/mingw/)
+* After downloading, extract the ZIP folder and you can then proceed to building the stuff from source
+* Install both [FFmpeg](https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n6.0-latest-win64-lgpl-6.0.zip), [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases/download/2023.07.06/yt-dlp_win.zip), and [MinGW Compiler](https://sourceforge.net/projects/mingw/)
 * Create a folder for FFmpeg and yt-dlp in your C: directory
+* Drag all files from FFmpeg to your FFmpeg directory and do the same for yt-dlp
 *  Open ``cmd`` or your terminal to install chocolatey (this will be used to install [make](https://www.gnu.org/software/make/) later on):
 ```.bat
 > Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
@@ -24,11 +25,11 @@
 * Click on "Apply" then it should start downloading, once done you can safely click on "Close" and close MinGW
 ---
 ## Setting Environment Variables
-* Go to the folder where you installed ``FFmpeg`` and ``yt-dlp``
-* Copy their paths and search up in Windows ``Edit the system environment variables``
+* Go to the folder where you installed ``FFmpeg`` (Go to ``FFmpeg/bin/``) and ``yt-dlp``
+* Copy their paths and search up in Windows: ``Edit the system environment variables``
 * Click on ``Environment Variables``
 * Under ``System Variables`` find ``Path``, click on it and press ``Edit``
-* Press on ``New`` and paste in each of the directories for FFmpeg and yt-dlp
+* Press on ``New`` and paste in each of the directories for ``FFmpeg/bin/`` and ``yt-dlp``
 ---
 ## Building the source
 * Open YTDLCPP's folder and run ``cmd`` from there.

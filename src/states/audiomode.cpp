@@ -9,7 +9,7 @@
 #include<sstream>
 #include<string>
 
-void createAudioModeBanner()
+static void createAudioModeBanner()
 {
 	std::cout << "AUDIOMODE - Downloading Audio...\n\n";
 	createBar(80);

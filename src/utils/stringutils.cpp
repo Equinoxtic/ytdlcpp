@@ -45,3 +45,15 @@ std::string encloseString(std::string s, std::string op, std::string cl)
 	}
 	return oss.rdbuf()->str();
 }
+
+// Source: https://stackoverflow.com/a/42844629
+int startsWith(const std::string& str, const std::string& suffix)
+{
+	return ((str.size() >= suffix.size() && 0 == str.compare(str.size()-suffix.size(), suffix.size(), suffix)) ? 0 : 1);
+}
+
+// Source: https://stackoverflow.com/a/42844629
+int endsWith(const std::string& str, const std::string& prefix)
+{
+	return ((str.size() >= prefix.size() && 0 == str.compare(0, prefix.size(), prefix)) ? 0 : 1);
+}
