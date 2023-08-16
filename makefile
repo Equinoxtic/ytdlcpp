@@ -7,6 +7,8 @@ SOURCE_FILES= src/utils/sys.hpp \
 		src/utils/ytutils.cpp \
 		src/utils/stringutils.cpp \
 		src/utils/stringutils.hpp \
+		src/utils/contentutils.cpp \
+		src/utils/contentutils.hpp \
 		src/states/audiomode.hpp \
 		src/states/audiomode.cpp \
 		src/states/videomode.hpp \
