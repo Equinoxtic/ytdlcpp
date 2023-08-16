@@ -49,16 +49,16 @@ int downloadVideo(std::string link, std::string videoQuality, std::string videoF
 
 		// Merge process (Uses FFmpeg)
 		printf("\n[INFO/YTDLCPP]: Merging audio and video file of \"%s\"...", link.c_str());
-		mergeContent(audioFile.rdbuf()->str().c_str(), videoFile.rdbuf()->str().c_str(), output_name, videoFormat);
+		mergeContent(audioFile.rdbuf()->str(), videoFile.rdbuf()->str(), output_name, videoFormat);
 		outputVideo << output_name << "." << videoFormat;
 
 		// Remove process (Saves space for users)
 		printf("\n[INFO/YTDLCPP]: Removing old video and audio file of \"%s\"", link.c_str());
-		removeContent(audioFile.rdbuf()->str().c_str(), videoFile.rdbuf()->str().c_str());
+		removeContent(audioFile.rdbuf()->str(), videoFile.rdbuf()->str());
 
 		// Moves to the accessible "local/" directory
 		printf("\n[INFO/YTDLCPP]: Moving output file to \"local/\"...");
-		moveOutputToLocal(outputVideo.rdbuf()->str().c_str());
+		moveOutputToLocal(outputVideo.rdbuf()->str());
 
 		printf("\n[INFO/YTDLCPP]: Successfully merged video and audio file of \"%s\" (You can find it in the directory: \"local/\")", link.c_str());
 
