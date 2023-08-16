@@ -15,6 +15,8 @@ SOURCE_FILES= src/utils/sys.hpp \
 		src/states/videomode.cpp \
 		src/states/mainmenu.cpp \
 		src/states/mainmenu.hpp \
+		src/states/playmode.cpp \
+		src/states/playmode.hpp \
 		src/ui/option.cpp \
 		src/ui/option.hpp \
 		src/ui/bar.cpp \
