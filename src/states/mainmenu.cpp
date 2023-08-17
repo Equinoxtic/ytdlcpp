@@ -28,6 +28,7 @@ static void createMainMenuDescriptions()
 	std::vector<std::string> descriptionVector = {
 		"Download videos from YouTube.",
 		"Extract audio from YouTube videos.",
+		"Play downloaded videos and audios. (Uses FFplay)",
 		"Open-source and made in C++"
 	};
 	std::cout << "\n\n";
