@@ -44,7 +44,11 @@ int moveOutputToLocal(std::string output)
 	} else {
 		// move [OUTPUT_F] [LOCAL_DIR]
 		std::ostringstream oss;
+		#ifndef _WIN32
 		oss << "mv \"" << output << "\" local/";
+		#else
+		oss << "move \"" << output << "\" local/";
+		#endif
 		sysExecute(oss.rdbuf()->str());
 	}
 	return 0;
