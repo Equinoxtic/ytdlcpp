@@ -1,6 +1,6 @@
 # Build script
 
-echo "Building and running \"ytdlcpp...\""
+echo "Building and running \"ytdlcpp\"..."
 mkdir -p bin/
 mkdir -p bin/local/
 make

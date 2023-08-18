@@ -30,9 +30,9 @@ int sysClearScreen()
 int sysPause(bool showMessage, bool clearScreen)
 {
 	if (showMessage) {
-		std::cout << "\n\nPress any key to continue...";
+		std::cout << "\n\nPress any key to continue... ";
 	}
-	_getch();
+	getch();
 	if (clearScreen) {
 		#ifndef _WIN32
 		system("clear");

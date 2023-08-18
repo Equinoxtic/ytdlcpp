@@ -28,8 +28,10 @@ static void createMainMenuDescriptions()
 	std::vector<std::string> descriptionVector = {
 		"Download videos from YouTube.",
 		"Extract audio from YouTube videos.",
+		"Play downloaded videos and audios. (Uses FFplay)",
 		"Open-source and made in C++"
 	};
+	
 	std::cout << "\n\n";
 	createBulletList(descriptionVector);
 	printf("\n(GitHub Repository): \"%s\"\n\n", repositoryLink.c_str());
@@ -46,6 +48,7 @@ static void showMainMenuOptions(bool newline = false, bool listing_mode = false)
 		"help",
 		"exit"
 	};
+
 	std::vector<std::string> options_descs = {
 		"Download Audio",
 		"Download Video",
@@ -53,11 +56,13 @@ static void showMainMenuOptions(bool newline = false, bool listing_mode = false)
 		"Get help of options",
 		"Exit program"
 	};
+
 	if (listing_mode) {
 		std::cout << "\n-- COMMANDS & USAGE --\n";
 	} else {
 		std::cout << "\n";
 	}
+
 	for (size_t i = 0; i < options_descs.size(); ++i) {
 		createOption(option_names[i], options_descs[i]);
 		if (i < options_descs.size() - 1 && i < option_names.size() - 1) {
@@ -90,9 +95,9 @@ int createMainMenu()
 			showMainMenuOptions(true, true);
 		}
 
-		if (compareString(coption, "help") != 0) {
-			sleep_ms(275); sysClearScreen();
-		}
+		// if (compareString(coption, "help") != 0) {
+		// 	sleep_ms(275); sysClearScreen();
+		// }
 	}
 
 	return 0;

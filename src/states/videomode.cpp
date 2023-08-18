@@ -8,7 +8,7 @@
 #include<iostream>
 #include<sstream>
 
-void createVideoModeBanner()
+static void createVideoModeBanner()
 {
 	std::cout << "VIDEOMODE - Downloading Video...\n\n";
 	createBar(80);
