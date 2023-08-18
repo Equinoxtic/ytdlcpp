@@ -30,4 +30,4 @@ SOURCE_FILES= src/utils/sys.hpp \
 		common.hpp
 
 build:
-	$(GXX) $(MAIN_FILE) -std=c++11 -Wall $(SOURCE_FILES) -o $(OUTPUT_FILE)
+	$(GXX) $(MAIN_FILE) -std=c++17 -Wall $(SOURCE_FILES) -o $(OUTPUT_FILE)

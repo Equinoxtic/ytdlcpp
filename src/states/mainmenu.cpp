@@ -69,7 +69,7 @@ static void showMainMenuOptions(bool newline = false, bool listing_mode = false)
 			std::cout << "\n";
 		}
 	}
-	std::cout << "\n\n";
+	std::cout << "\n";
 }
 
 int createMainMenu()
@@ -82,7 +82,7 @@ int createMainMenu()
 	showMainMenuOptions();
 
 	while(compareString(coption, "exit") != 0) {
-		std::cout << "[prompt]:~$ ";
+		std::cout << "\n[prompt]:~$ ";
 		std::getline(std::cin, icoption);
 		coption = icoption;
 		if (compareString(coption, "dl-audio") == 0) {

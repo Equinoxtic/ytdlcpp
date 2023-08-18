@@ -5,6 +5,7 @@
 #include "../ui/bar.hpp"
 #include "../list.hpp"
 #include "../logging.hpp"
+#include "../utils/contentutils.hpp"
 #include<iostream>
 #include<string>
 #include<sstream>
@@ -129,10 +130,8 @@ int runPlayMode()
 		if (!(stringEmpty(ioption)) == 0) {
 			if (!(compareString(ioption, "exit")) == 0) {
 				if (isValidExt) {
-					std::ostringstream oss;
 					generateControls();
-					oss << "ffplay -loglevel error -noborder -x 1280 -y 720 -loop 0 \"./local/" << ioption << "\"";
-					sysExecute(oss.rdbuf()->str());
+					playOutput(ioption);
 				} else {
 					return 1;
 				}

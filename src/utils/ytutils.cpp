@@ -12,10 +12,13 @@ int downloadAudio(std::string link, std::string quality, std::string format, std
 		printf("\n=== Downloading Audio ===\nLINK: %s\nQUALITY: %s\nFILE FORMAT: %s\nOUTPUT NAME: %s\n", link.c_str(), quality.c_str(), format.c_str(), output_name.c_str());
 		// yt-dlp [LINK] ... quality: [QUALITY] format: [FORMAT] output [OUTPUT]
 		std::ostringstream oss_dlaf;
+		std::ostringstream output_audio;
+		output_audio << output_name << "." << format;
 		oss_dlaf << "yt-dlp \"" << link << "\" -x --audio-quality " << quality << " --audio-format " << format << " --output " << output_name;
 		sysExecute(oss_dlaf.rdbuf()->str());
-		printf("Successful download for \"%s\"", link.c_str());
-		sysPause(true, false);
+		printf("Successful download for \"%s\"\n\nMoving to \"local/\" directory. (You may go find this file later on)\n", link.c_str());
+		moveOutputToLocal(output_audio.rdbuf()->str());
+		sysPause(true, true);
 		return 0;
 	} else {
 		std::cout << "Failed download operation, one or more string literals are empty.";
@@ -57,12 +60,12 @@ int downloadVideo(std::string link, std::string videoQuality, std::string videoF
 		removeContent(audioFile.rdbuf()->str(), videoFile.rdbuf()->str());
 
 		// Moves to the accessible "local/" directory
-		printf("\n[INFO/YTDLCPP]: Moving output file to \"local/\"...");
+		printf("\n[INFO/YTDLCPP]: Moving output file to \"local/\"...\n");
 		moveOutputToLocal(outputVideo.rdbuf()->str());
 
 		printf("\n[INFO/YTDLCPP]: Successfully merged video and audio file of \"%s\" (You can find it in the directory: \"local/\")", link.c_str());
 
-		sysPause(true, false);
+		sysPause(true, true);
 
 		return 0;
 	} else {
