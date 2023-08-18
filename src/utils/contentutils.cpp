@@ -62,7 +62,8 @@ int playOutput(std::string output)
 	} else {
 		// ffplay [LOCAL_DIR]/[OUTPUT_F]
 		std::ostringstream oss;
-		oss << "ffplay \"./local/" << output << "\"";
+		oss << "ffplay -loglevel error -noborder -x 1280 -y 720 -loop 0 \"./local/" << output << "\"";
+		sysExecute(oss.rdbuf()->str());
 	}
 	return 0;
 }
